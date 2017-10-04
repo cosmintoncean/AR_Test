@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "CarNode.h"
 #import "Plane.h"
 
 @interface ViewController () <ARSCNViewDelegate>
@@ -54,12 +55,10 @@
     //DEBUG
     self.sceneView.debugOptions = ARSCNDebugOptionShowWorldOrigin | ARSCNDebugOptionShowFeaturePoints;
     
-    // Set the scene to the view
-//    self.sceneView.scene = scene;
 }
 
 - (void)setupSceneConfiguration {
-    arTrackingConfig = [ARWorldTrackingSessionConfiguration new];
+    arTrackingConfig = [ARWorldTrackingConfiguration new];
     arTrackingConfig.lightEstimationEnabled = YES;
     arTrackingConfig.planeDetection = ARPlaneDetectionHorizontal;
 }
@@ -95,18 +94,14 @@
 
 - (void)spawnCar:(ARHitTestResult *)hitResult {
     
-    float insertionYOffset = 0.5;
     SCNVector3 position = SCNVector3Make(
                                          hitResult.worldTransform.columns[3].x,
-                                         hitResult.worldTransform.columns[3].y + insertionYOffset,
+                                         hitResult.worldTransform.columns[3].y + 0.1,
                                          hitResult.worldTransform.columns[3].z
                                          );
     
-    self.carNode = [[SCNNode alloc] init];
-    SCNScene *scene = [SCNScene sceneNamed:@"art.scnassets/free_car_1.dae"];
-    self.carNode = [scene.rootNode childNodeWithName:@"car1" recursively:YES];
-    self.carNode.position = position;
-
+    
+    self.carNode = [[CarNode alloc] initWithPosition:position];
     [self.sceneView.scene.rootNode addChildNode:self.carNode];
 }
 
@@ -138,6 +133,10 @@
         return;
     }
     [plane update:(ARPlaneAnchor *)anchor];
+}
+
+- (void)renderer:(id<SCNSceneRenderer>)renderer didRemoveNode:(SCNNode *)node forAnchor:(ARAnchor *)anchor {
+    [planesDictionary removeObjectForKey:anchor.identifier];
 }
 
 - (void)showAlertWithMessage:(NSString *)message andTitle:(NSString *)title {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E2F99D21F261DE7001B3041 /* CarNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E2F99D11F261DE7001B3041 /* CarNode.m */; };
 		2EBDE8E51F2251ED00B35250 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EBDE8E41F2251ED00B35250 /* AppDelegate.m */; };
 		2EBDE8E71F2251ED00B35250 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EBDE8E61F2251ED00B35250 /* art.scnassets */; };
 		2EBDE8EA1F2251ED00B35250 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EBDE8E91F2251ED00B35250 /* ViewController.m */; };
@@ -18,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E2F99D01F261DE7001B3041 /* CarNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarNode.h; sourceTree = "<group>"; };
+		2E2F99D11F261DE7001B3041 /* CarNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarNode.m; sourceTree = "<group>"; };
 		2EBDE8E01F2251ED00B35250 /* ARTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EBDE8E31F2251ED00B35250 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2EBDE8E41F2251ED00B35250 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -63,7 +66,7 @@
 		2EBDE8E21F2251ED00B35250 /* ARTest */ = {
 			isa = PBXGroup;
 			children = (
-				2EBDE8FB1F2266C700B35250 /* Plane */,
+				2EBDE8FB1F2266C700B35250 /* Nodes */,
 				2EBDE8E31F2251ED00B35250 /* AppDelegate.h */,
 				2EBDE8E41F2251ED00B35250 /* AppDelegate.m */,
 				2EBDE8E61F2251ED00B35250 /* art.scnassets */,
@@ -78,13 +81,15 @@
 			path = ARTest;
 			sourceTree = "<group>";
 		};
-		2EBDE8FB1F2266C700B35250 /* Plane */ = {
+		2EBDE8FB1F2266C700B35250 /* Nodes */ = {
 			isa = PBXGroup;
 			children = (
 				2EBDE8FC1F22670600B35250 /* Plane.h */,
 				2EBDE8FD1F22670600B35250 /* Plane.m */,
+				2E2F99D01F261DE7001B3041 /* CarNode.h */,
+				2E2F99D11F261DE7001B3041 /* CarNode.m */,
 			);
-			path = Plane;
+			path = Nodes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,6 +168,7 @@
 				2EBDE8F51F2251ED00B35250 /* main.m in Sources */,
 				2EBDE8FE1F22670600B35250 /* Plane.m in Sources */,
 				2EBDE8E51F2251ED00B35250 /* AppDelegate.m in Sources */,
+				2E2F99D21F261DE7001B3041 /* CarNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +350,7 @@
 				2EBDE8FA1F2251ED00B35250 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

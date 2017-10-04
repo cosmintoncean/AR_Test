@@ -11,7 +11,7 @@
 #import <ARKit/ARKit.h>
 
 @interface ViewController : UIViewController {
-    ARWorldTrackingSessionConfiguration *arTrackingConfig;
+    ARWorldTrackingConfiguration *arTrackingConfig;
     NSMutableDictionary *planesDictionary;
 }
 
